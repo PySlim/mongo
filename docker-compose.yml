@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mongodb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: usermongo
+      MONGO_INITDB_ROOT_PASSWORD: akam1022AK
+      MONGO_INITDB_DATABASE: tedros
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/:/etc/mongo
+
+volumes:
+  mongo: {}
